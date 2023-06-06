@@ -90,7 +90,7 @@ if ($_SESSION['poste']=='Agent') {
     </head>
     <body class="nk-body bg-lighter " >
         <div class="nk-app-root">
-            <div class="nk-wrap " style="background-image: url('images/dgbf/bat 2.png'); background-position: button; background-size: cover; ">
+            <div class="nk-wrap " style="background-image: url('images/dgbf/bat 4.png'); background-position: button; background-size: cover; ">
                 <div class="nk"  >
                     <img style=" background-size: cover;" src="images/dgbf/banniere-min.jpg"></img>
                 </div>
@@ -307,11 +307,11 @@ if ($_SESSION['poste']=='Agent') {
                             <em class="nk-modal-icon icon icon-circle icon-circle-xxl ni ni-cross bg-danger">
                             </em>
                             <h4 class="nk-modal-title">
-                                Suppression ?
+                                Licenciement ?
                             </h4>
                             <div class="nk-modal-text mt-n2">
                                 <p class="text-soft">
-                                    Voulez-vous vraiment supprimer cet rendez-vous ?.
+                                    Voulez-vous vraiment licencié cet agent ?.
                                 </p>
                             </div>
                             <ul class="d-flex justify-content-center gx-4 mt-4">

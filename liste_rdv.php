@@ -118,7 +118,7 @@ if ($_SESSION['poste']=='Agent') {
     </head>
     <body class="nk-body bg-lighter " >
         <div class="nk-app-root">
-            <div class="nk-wrap " style="background-image: url('images/dgbf/bat 2.png'); background-position: button; background-size: cover; ">
+            <div class="nk-wrap " style="background-image: url('images/dgbf/bat 4.png'); background-position: button; background-size: cover; ">
                 <div class="nk"  >
                     <img style=" background-size: cover;" src="images/dgbf/banniere-min.jpg"></img>
                 </div>
@@ -408,7 +408,7 @@ if ($_SESSION['poste']=='Agent') {
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <?php foreach ($element_rdv1 as $key => $value) {?>
+                                                        <?php foreach ($element_rdv1 as $key => $value) { $start= new DateTime($value['date_rdv'])?>
                                                         <tr class="nk-tb-item">
                                                             <td class="nk-tb-col nk-tb-col-check">
                                                                 <?php echo $key+1; ?>
@@ -437,7 +437,7 @@ if ($_SESSION['poste']=='Agent') {
                                                             </td>
                                                             <td class="nk-tb-col tb-col-md">
                                                                 <span>
-                                                                    <?php echo $value['date_rdv']; ?>
+                                                                    <?php echo $start->format('d-m-Y'); ?>
                                                                 </span>
                                                             </td>
                                                             <td class="nk-tb-col tb-col-md">

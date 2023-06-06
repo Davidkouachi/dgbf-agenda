@@ -76,7 +76,7 @@ echo $time."   ".date("H:i:s", strtotime('+10 minutes',strtotime($time)));*/
     </head>
     <body class="nk-body bg-lighter ">
         <div class="nk-app-root">
-            <div class="nk-wrap " style="background-image: url('images/dgbf/bat 2.png'); background-position: button; background-size: cover; ">
+            <div class="nk-wrap " style="background-image: url('images/dgbf/bat 4.png'); background-position: button; background-size: cover; ">
                 <div class="nk"  >
                     <img style=" background-size: cover;" src="images/dgbf/banniere-min.jpg"></img>
                 </div>
@@ -297,6 +297,7 @@ echo $time."   ".date("H:i:s", strtotime('+10 minutes',strtotime($time)));*/
                     <div class="container-fluid">
                         <div class="nk-content-inner">
                             <div class="nk-content-body">
+
                                 <div class="components-preview wide-lg mx-auto">
                                     <div class="nk-block-head nk-block-head-lg wide-sm">
                                         <div class="nk-block-head-content">
@@ -320,7 +321,7 @@ echo $time."   ".date("H:i:s", strtotime('+10 minutes',strtotime($time)));*/
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-10">
                                                             <div class="form-group">
                                                                 <label class="form-label" for="fv-full-name">
                                                                     Document requis
@@ -330,7 +331,7 @@ echo $time."   ".date("H:i:s", strtotime('+10 minutes',strtotime($time)));*/
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-2">
                                                             <div class="form-group">
                                                                 <label class="form-label" for="fv-full-name">
                                                                     Heures
@@ -366,6 +367,7 @@ echo $time."   ".date("H:i:s", strtotime('+10 minutes',strtotime($time)));*/
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>

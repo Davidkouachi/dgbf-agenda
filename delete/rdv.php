@@ -14,8 +14,6 @@ $element_rdv=$req->fetchall();
     $req->execute(array($_GET['id_rdv']));
     $element=$req->fetchall();
 
-    foreach ($element as $elt) {
-
         require 'PHPMailer-master\src\Exception.php';
         require 'PHPMailer-master\src\PHPMailer.php';
         require 'PHPMailer-master\src\SMTP.php';
@@ -32,7 +30,9 @@ $element_rdv=$req->fetchall();
 
         $mail->setFrom('ci.dgbf@gmail.com');
 
-        $mail->addAddress($elt['email_usager']);
+        foreach ($element as $elt) {
+            $mail->addAddress($elt['email_usager']);
+        }
 
         $mail->isHTML(true);
 
@@ -42,7 +42,7 @@ $element_rdv=$req->fetchall();
                         a été annuler pour des raisons d'indisponibilités ";
 
         $mail->send();
-    }
+    
 
 $_SESSION['notif_anu']="ok";
 header("Location:../liste_rdv.php");

@@ -2,7 +2,6 @@
 
     session_start();
     require_once("connexion_bd/connexion_bd.php");
-    require_once("mise_a_jour_auto.php");
 
     if ($_SESSION['id_usager']=='0' || $_SESSION['id_usager']=='') {
         header('location:login/login_v1/cons.php');
@@ -79,7 +78,7 @@
         </head>
         <body class="nk-body bg-lighter ">
             <div class="nk-app-root">
-                <div class="nk-wrap " style="background-image: url('images/dgbf/bat 2.png'); background-position: button; background-size: cover; ">
+                <div class="nk-wrap " style="background-image: url('images/dgbf/bat 4.png'); background-position: button; background-size: cover; ">
                     <div class="nk"  >
                         <img style=" background-size: cover;" src="images/dgbf/banniere-min.jpg"></img>
                     </div>
@@ -269,7 +268,7 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody class="text-center">
-                                                        <?php foreach ($element_rdv as $key => $elt_rdv) {?>
+                                                        <?php foreach ($element_rdv as $key => $elt_rdv) { $start= new DateTime($elt_rdv['date_rdv'])?>
                                                         <tr class="nk-tb-item">
                                                             <td class="nk-tb-col nk-tb-col-check">
                                                                 <?php echo $key+1; ?>
@@ -281,7 +280,7 @@
                                                             </td>
                                                             <td class="nk-tb-col tb-col-md">
                                                                 <span>
-                                                                    <?php echo $elt_rdv['date_rdv']; ?>
+                                                                    <?php echo $start->format('d-m-Y'); ?>
                                                                 </span>
                                                             </td>
                                                             <td class="nk-tb-col tb-col-md">

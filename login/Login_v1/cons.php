@@ -31,7 +31,7 @@ require_once("../../connexion_bd/connexion_bd.php");
 <body>
 	
 	<div class="limiter">
-		<div class="container-login100" style="background-image: url('../../images/dgbf/bat 2.png'); background-position: button; background-size: cover; ">
+		<div class="container-login100" style="background-image: url('../../images/dgbf/bat 4.png'); background-position: button; background-size: cover; ">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
 					<img src="../../images/dgbf/usg.png" alt="IMG">

@@ -86,7 +86,7 @@ if ($_SESSION['poste']=='Directeur' || $_SESSION['poste']=='Sous-Directeur' || $
     </head>
     <body class="nk-body bg-lighter " >
         <div class="nk-app-root">
-            <div class="nk-wrap " style="background-image: url('images/dgbf/bat 2.png'); background-position: button; background-size: cover; ">
+            <div class="nk-wrap " style="background-image: url('images/dgbf/bat 4.png'); background-position: button; background-size: cover; ">
                 <div class="nk"  >
                     <img style=" background-size: cover;" src="images/dgbf/banniere-min.jpg"></img>
                 </div>
@@ -548,11 +548,11 @@ if ($_SESSION['poste']=='Directeur' || $_SESSION['poste']=='Sous-Directeur' || $
                 }
             },
             events: [
-                <?php foreach($element_event as $elt_event){ $start= new DateTime($elt_event['start_event']); $end= new DateTime($elt_event['end_event']); if ($elt_event['start_event']==$elt_event['end_event']) {?>
+                <?php if ($nbre_event=='0') { }else { foreach($element_event as $elt_event){ $start= new DateTime($elt_event['start_event']); $end= new DateTime($elt_event['end_event']); if ($elt_event['start_event']==$elt_event['end_event']) {?>
                     {   id     : '<?php echo $elt_event['id_event']; ?>',
                         title  : '<?php echo $elt_event['libelle_type_even']; ?>',
                         start  : '<?php echo $elt_event['start_event']." ".$elt_event['heure_event']; ?>',
-                        description : '<?php echo "De ".$elt_event['fin_event']." à ".$elt_event['fin_event'].". Orgainser par ".$elt_event['np_agent']; ?>',
+                        description : '<?php echo "De ".$elt_event['heure_event']." à ".$elt_event['fin_event'].". Orgainser par ".$elt_event['np_agent']; ?>',
                         color  : '<?php echo $elt_event['color_event']; ?>' },
                 <?php }else{?>
                     {   id     : '<?php echo $elt_event['id_event']; ?>',
@@ -561,7 +561,7 @@ if ($_SESSION['poste']=='Directeur' || $_SESSION['poste']=='Sous-Directeur' || $
                         end    : '<?php echo $elt_event['end_event']." ".$elt_event['fin_event']; ?>',
                         description : '<?php echo "Du ".$start->format('d-m-Y')." au ".$end->format('d-m-Y')." de ".$elt_event['heure_event']." à ".$elt_event['fin_event'].". Orgainser par ".$elt_event['np_agent']; ?>',
                         color  : '<?php echo $elt_event['color_event']; ?>' },
-                <?php } } ?>
+                <?php } } }?>
                 
             ],
             eventClick: function (info) {
@@ -598,11 +598,11 @@ if ($_SESSION['poste']=='Directeur' || $_SESSION['poste']=='Sous-Directeur' || $
     </script>
 
 
-        <script src="assets/js/bundle0226.js?ver=3.1.2">
+        <script src="assets/js/bundle0226.js">
         </script>
-        <script src="assets/js/scripts0226.js?ver=3.1.2">
+        <script src="assets/js/scripts0226.js">
         </script>
-        <script src="assets/js/demo-settings0226.js?ver=3.1.2">
+        <script src="assets/js/demo-settings0226.js">
         </script>
         <!-- <script src="assets/js/libs/fullcalendar0226.js?ver=3.1.2">
         </script>

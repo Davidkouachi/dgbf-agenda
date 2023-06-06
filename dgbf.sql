@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 09 mai 2023 à 21:43
+-- Généré le : ven. 26 mai 2023 à 05:49
 -- Version du serveur : 8.0.31
--- Version de PHP : 8.2.0
+-- Version de PHP : 8.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -50,10 +50,9 @@ INSERT INTO `agent` (`id_agent`, `np_agent`, `tel_agent`, `email_agent`, `mdp_ag
 (13, 'JUNIOR', '123', 'junior@gmail.com', '202cb962ac59075b964b07152d234b70', 'oui', 4, 'non', 'non'),
 (12, 'SEKA', '123', 'seka@gmail.com', '202cb962ac59075b964b07152d234b70', 'non', 2, 'oui', 'non'),
 (11, 'KEITA', '123', 'keita@gmail.com', '202cb962ac59075b964b07152d234b70', 'oui', 2, 'non', 'non'),
-(10, 'DAVID', '123', 'davidkouachi01@gmail.com', '202cb962ac59075b964b07152d234b70', 'non', 5, 'non', 'non'),
+(10, 'DAVID', '123', 'davidkouachi01@gmail.com', '202cb962ac59075b964b07152d234b70', 'non', 5, 'non', 'oui'),
 (15, 'CHRIS', '8562', 'chris@gmail.com', '202cb962ac59075b964b07152d234b70', 'oui', 5, 'non', 'oui'),
 (16, 'STEV', '12345', 'dav@gmail.com', '202cb962ac59075b964b07152d234b70', 'oui', 3, 'non', 'non'),
-(17, 'TTYUYIU', '1234565678', 'KOU@gmail.com', '202cb962ac59075b964b07152d234b70', 'non', 5, 'non', 'non'),
 (19, 'CHISTIAN', '9876543', 'chris2@gmail.com', '202cb962ac59075b964b07152d234b70', 'oui', 10, 'non', 'non'),
 (20, 'JUNIOR2', '675446', 'junior2@gmail.com', '202cb962ac59075b964b07152d234b70', 'oui', 11, 'non', 'non'),
 (21, 'MARKETING', '55564', 'mar@gmail.com', '202cb962ac59075b964b07152d234b70', 'non', 12, 'non', 'non'),
@@ -87,23 +86,15 @@ CREATE TABLE IF NOT EXISTS `event` (
   KEY `id_type_even` (`id_type_even`),
   KEY `id_agent` (`id_agent`),
   KEY `id_hira` (`id_hira`)
-) ENGINE=MyISAM AUTO_INCREMENT=78 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=80 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `event`
 --
 
 INSERT INTO `event` (`id_event`, `title_event`, `start_event`, `heure_event`, `end_event`, `fin_event`, `color_event`, `id_type_even`, `id_agent`, `description_event`, `ordre_event`, `lieu_event`, `statut_event`, `id_hira`) VALUES
-(69, 'AVANCER DE TRAVAIL', '2023-05-05', '14:00:00', '2023-05-05', '16:00:00', 'green', 10, 15, 'EFZAFZEQ', 'AZREAZRFZE', 'ZAFEFGZE', 'en attente', 4),
-(68, 'SIGOBE', '2023-05-04', '10:30:00', '2023-05-06', '12:00:00', 'orange', 10, 15, 'rien', 'AVANCER DU TRAVAIL', 'SALLE DE REUNION 20 eime', 'en attente', 11),
-(70, 'CcQC', '2023-05-19', '10:00:00', '2023-05-19', '09:30:00', 'orange', 13, 15, 'Cqcq', 'cCcQ', 'Cqc', 'annuler', 5),
-(71, 'ffqfq', '2023-05-19', '09:00:00', '2023-05-19', '09:00:00', 'orange', 12, 15, 'fsqfsq', 'fqsfsq', 'fsqfsq', 'annuler', 5),
-(72, 'zdadaz', '2023-05-25', '09:30:00', '2023-05-25', '10:00:00', 'orange', 12, 15, 'daz', 'dza', 'daz', 'annuler', 5),
-(73, 'szccq', '2023-05-08', '08:30:00', '2023-05-08', '10:00:00', 'orange', 12, 11, 'czzzzz', 'zcZ', 'czCQ', 'annuler', 2),
-(74, 'a', '2023-05-06', '10:00:00', '2023-05-06', '10:30:00', 'orange', 12, 15, 'a', 'a', 'a', 'annuler', 5),
-(75, 'caze', '2023-05-06', '08:30:00', '2023-05-06', '09:30:00', 'orange', 11, 15, 'azc', 'za', 'cza', 'en attente', 5),
-(76, 'azdza', '2023-05-09', '10:00:00', '2023-05-09', '10:00:00', 'orange', 12, 15, 'dza', 'dza', 'dza', 'en attente', 5),
-(77, 'dqscq', '2023-05-10', '09:00:00', '2023-05-10', '09:30:00', 'orange', 12, 13, 'cdqs', 'cqd', 'qdc', 'en attente', 4);
+(79, 'SIGOBE', '2023-05-25', '08:30:00', '2023-05-27', '10:00:00', 'green', 12, 15, 'RIEN', 'AVANCER DU TRAVAI QUI A ETE DEMANDER', 'SALLE DE REUNION 18', 'en attente', 5),
+(78, 'SIGOBE', '2023-05-24', '11:00:00', '2023-05-24', '12:00:00', 'orange', 10, 15, 'rien', 'Avancer du travail ', 'salle de reunion', 'en attente', 5);
 
 -- --------------------------------------------------------
 
@@ -154,38 +145,17 @@ CREATE TABLE IF NOT EXISTS `participe` (
   PRIMARY KEY (`id_convo`),
   KEY `id_agent` (`id_agent`),
   KEY `id_event` (`id_event`)
-) ENGINE=MyISAM AUTO_INCREMENT=148 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=152 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `participe`
 --
 
 INSERT INTO `participe` (`id_convo`, `id_agent`, `id_event`) VALUES
-(108, 13, 57),
-(107, 14, 57),
-(106, 11, 57),
-(105, 12, 57),
-(104, 18, 56),
-(103, 17, 56),
-(102, 15, 56),
-(101, 10, 56),
-(100, 10, 55),
-(99, 20, 55),
-(98, 13, 55),
-(97, 14, 55),
-(96, 15, 54),
-(95, 20, 54),
-(94, 13, 54),
-(93, 14, 54),
-(92, 19, 53),
-(91, 15, 53),
-(90, 20, 53),
-(89, 13, 53),
-(88, 14, 53),
-(87, 11, 53),
-(86, 12, 53),
-(109, 10, 59),
-(110, 15, 59),
+(151, 15, 79),
+(150, 10, 79),
+(149, 15, 78),
+(148, 10, 78),
 (111, 10, 60),
 (112, 15, 60),
 (113, 12, 61),
@@ -236,20 +206,9 @@ CREATE TABLE IF NOT EXISTS `prestation` (
   `n_pres` text NOT NULL,
   `d_pres` text NOT NULL,
   `id_hira` int NOT NULL,
-  `id_heure` int NOT NULL,
   PRIMARY KEY (`id_pres`),
-  KEY `id_hira` (`id_hira`),
-  KEY `id_heure` (`id_heure`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Déchargement des données de la table `prestation`
---
-
-INSERT INTO `prestation` (`id_pres`, `n_pres`, `d_pres`, `id_hira`, `id_heure`) VALUES
-(9, 'ECOUTE', 'CNI', 5, 0),
-(7, 'CONCEPTION BD', 'cahier de charge', 10, 0),
-(8, 'DEVELOPPEMENT DE SITE WEB', 'cahier de charge, 50% du budget', 5, 0);
+  KEY `id_hira` (`id_hira`)
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -263,28 +222,7 @@ CREATE TABLE IF NOT EXISTS `prevue` (
   `id_heure` int NOT NULL,
   `id_pres` int NOT NULL,
   PRIMARY KEY (`id_pre`)
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Déchargement des données de la table `prevue`
---
-
-INSERT INTO `prevue` (`id_pre`, `id_heure`, `id_pres`) VALUES
-(29, 9, 9),
-(28, 18, 9),
-(5, 1, 7),
-(6, 4, 7),
-(7, 8, 7),
-(8, 1, 8),
-(9, 2, 8),
-(10, 3, 8),
-(11, 4, 8),
-(12, 5, 8),
-(13, 6, 8),
-(27, 17, 9),
-(26, 8, 9),
-(25, 7, 9),
-(30, 10, 9);
+) ENGINE=MyISAM AUTO_INCREMENT=65 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -308,18 +246,7 @@ CREATE TABLE IF NOT EXISTS `rdv` (
   KEY `id_agent` (`id_pres`),
   KEY `id_heure` (`heure_rdv`),
   KEY `id_hira` (`id_hira`)
-) ENGINE=MyISAM AUTO_INCREMENT=90 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Déchargement des données de la table `rdv`
---
-
-INSERT INTO `rdv` (`id_rdv`, `date_rdv`, `heure_rdv`, `date_crea_rdv`, `statut_rdv`, `id_usager`, `id_pres`, `motif_rdv`, `id_hira`) VALUES
-(89, '2023-05-09', '11:30:00', '2023-05-08 16:27:55', 'absent', 114, 9, NULL, 5),
-(88, '2023-05-09', '12:00:00', '2023-05-08 16:25:04', 'absent', 114, 9, NULL, 5),
-(87, '2023-05-07', '12:00:00', '2023-05-05 18:39:46', 'absent', 114, 9, NULL, 5),
-(86, '2023-05-06', '08:30:00', '2023-05-05 18:38:26', 'absent', 120, 8, NULL, 5),
-(85, '2023-05-07', '09:00:00', '2023-05-05 11:46:45', 'absent', 119, 8, NULL, 5);
+) ENGINE=MyISAM AUTO_INCREMENT=107 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -423,58 +350,18 @@ CREATE TABLE IF NOT EXISTS `usager` (
   `tel_usager` varchar(10) NOT NULL,
   `mdp_usager` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
   PRIMARY KEY (`id_usager`)
-) ENGINE=MyISAM AUTO_INCREMENT=121 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=128 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `usager`
 --
 
 INSERT INTO `usager` (`id_usager`, `np_usager`, `email_usager`, `tel_usager`, `mdp_usager`) VALUES
-(92, 'DSQDF', 'david@gmail.com', 'zarzarz', ''),
-(91, 'DAVID2', 'davidkouachi01@gmail.com', '123456', ''),
-(90, 'DAVID', 'david@gmail.com', '123456', ''),
-(89, 'DAVID', 'davidkouachi01@gmail.com', '123456', ''),
-(88, 'DAVID2', 'david@gmail.com', 'zarzarz', ''),
-(87, 'ZADZA', 'david@gmail.com', 'zarzarz', ''),
-(86, 'DAVID2', 'david@gmail.com', 'zarzarz', ''),
-(85, 'AAAA', 'david@gmail.com', 'zarzarz', ''),
-(84, 'DAVID2', 'david@gmail.com', 'zarzarz', ''),
-(83, 'DAVID2', 'david@gmail.com', 'zarzarz', ''),
-(82, 'DSQDF', 'david@gmail.com', '123456GR', ''),
-(81, 'SASDQDQS', 'davidkouachi01@gmail.com', '123456', ''),
-(80, 'AAAA', 'david@gmail.com', 'azert', ''),
-(79, 'AAAA', 'david@gmail.com', 'azert', ''),
-(78, 'AAAA', 'david@gmail.com', 'azert', ''),
-(77, 'ZADZA', 'david@gmail.com', 'zarzarz', ''),
-(76, 'AAAA', 'david@gmail.com', 'zarzarz', ''),
-(75, 'DAVID', 'davidkouachi01@gmail.com', '123456', ''),
-(93, 'DA', 'zda@gmail.com', '43453', ''),
-(94, 'DA', 'zda@gmail.com', '43453', ''),
-(95, 'DA', 'zda@gmail.com', '43453', ''),
-(96, 'DAECF', 'zda@gmail.com', '43453', ''),
-(98, 'DAECF', 'zda@gmail.com', '43453', ''),
-(99, 'DAECF', 'zda@gmail.com', '43453', ''),
-(100, 'DAECF', 'zda@gmail.com', '43453', ''),
-(101, 'DAECF', 'zda@gmail.com', '43453', ''),
-(102, 'DA', 'zda@gmail.com', '43453', ''),
-(103, 'DAECF', 'zda@gmail.com', '43453', ''),
-(104, 'DAECF', 'zda@gmail.com', '43453', ''),
-(105, 'DA', 'zda@gmail.com', '43453', ''),
-(106, 'DAVID KOUACHI', 'david@gmail.com', '0885782723', ''),
-(107, 'DAVID KOUACHI', 'zda@gmail.com', '0885782723', ''),
-(108, 'DAVIDKOUACHI01@GMAIL.COM', 'davidkouachi01@gmail.com', '43453', ''),
-(109, 'DAVID KOUACHI', 'davidkouachi01@gmail.com', '43453', ''),
-(110, 'DAVID KOUACHI', 'davidkouachi01@gmail.com', '0885782723', ''),
-(111, 'DAVID', 'davidkouachi01@gmail.com', '21645', ''),
-(112, 'DAVID', 'davidkouachi01@gmail.com', '21645', ''),
-(113, 'DAVID', 'davidkouachi01@gmail.com', '21645', ''),
-(114, 'd', 'davidkouachi01@gmail.com', '54+6', '202cb962ac59075b964b07152d234b70'),
-(115, 'd', 'd@gmail.com', '546', '202cb962ac59075b964b07152d234b70'),
-(116, 'DAVID', 'davidkouachi01@gmail.com', '21645', NULL),
-(117, 'DAVID', 'davidkouachi01@gmail.com', '21645', NULL),
-(118, 'DAVID', 'davidkouachi01@gmail.com', '21645', NULL),
-(119, 'DAVID', 'davidkouachi01@gmail.com', '21645', NULL),
-(120, 'DAVID', 'davidkouachi01@gmail.com', '21645', NULL);
+(127, 'DAVID KOUACHI', 'davidkouachi01@gmail.com', '0585782723', NULL),
+(126, 'DAVID KOUACHI', 'davidkouachi01@gmail.com', '0585782723', NULL),
+(125, 'DAVID KOUACHI', 'davidkouachi01@gmail.com', '0585782723', NULL),
+(124, 'DAVID KOUACHI', 'davidkouachi01@gmail.com', '0585782723', NULL),
+(123, 'david kouachi', 'davidkouachi01@gmail.com', '0585782723', '202cb962ac59075b964b07152d234b70');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

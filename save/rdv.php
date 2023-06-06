@@ -51,10 +51,11 @@ if (isset($_POST['btn_rdv'])) {
 
     $mail->addAddress($_POST['email_usager']);
 
+
     $mail->isHTML(true);
 
     $mail->Subject = 'Confirmation de rendez-vous';
-    $mail->Body = 'Je voudrais confirmer votre rendez-vous prévu le '.$_POST['date_rdv'].' à '.$_POST['heure_rdv'].'.
+    $mail->Body = 'Nous voudrions confirmer votre rendez-vous prévu le '.$_POST['date_rdv'].' à '.$_POST['heure_rdv'].'.
 					Veuillez me contacter en cas de changement.';
 
     $mail->send();
@@ -62,9 +63,7 @@ if (isset($_POST['btn_rdv'])) {
 	$_SESSION['notif']="ok";
 	header("Location:../rdv.php");
 
-}
-
-if (isset($_POST['btn_rdv_ligne'])) {
+} elseif (isset($_POST['btn_rdv_ligne'])) {
 
 	$np_usager=$_POST['np_usager'];
 	$email_usager=$_POST['email_usager'];
@@ -110,17 +109,21 @@ if (isset($_POST['btn_rdv_ligne'])) {
     $mail->isHTML(true);
 
     $mail->Subject = 'Confirmation de rendez-vous';
-    $mail->Body = 'Je voudrais confirmer votre rendez-vous prévu le '.$_POST['date_rdv'].' à '.$_POST['heure_rdv'].'. 
+    $mail->Body = 'Nous voudrions confirmer votre rendez-vous prévu le '.$_POST['date_rdv'].' à '.$_POST['heure_rdv'].'. 
 					Veuillez me contacter en cas de changement.';
 
     $mail->send();
 					
 	$_SESSION['notif']="ok";
-	header("Location:../rdv_ligne.php");
+	
+	if ($_SESSION['id_usager']>'0') {
+        header("Location:../rdv_ligne_usager.php");
+    }else{
+    	header("Location:../rdv_ligne.php");
+    }
+	
 
-}
-
-if (isset($_POST['btn_rdv_ligne_usager'])) {					
+} elseif (isset($_POST['btn_rdv_ligne_usager'])) {					
 
 	$id_usager=$_SESSION['id_usager'];
 	$date_rdv=$_POST['date_rdv'];
@@ -158,7 +161,7 @@ if (isset($_POST['btn_rdv_ligne_usager'])) {
     $mail->isHTML(true);
 
     $mail->Subject = 'Confirmation de rendez-vous';
-    $mail->Body = 'Je voudrais confirmer votre rendez-vous prévu le '.$_POST['date_rdv'].' à '.$_POST['heure_rdv'].'. 
+    $mail->Body = 'Nous voudrions confirmer votre rendez-vous prévu le '.$_POST['date_rdv'].' à '.$_POST['heure_rdv'].'. 
 					Veuillez me contacter en cas de changement.';
 
     $mail->send();

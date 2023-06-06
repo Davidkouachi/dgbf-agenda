@@ -101,7 +101,7 @@ if ($_SESSION['poste']=='Directeur' || $_SESSION['poste']=='Sous-Directeur' || $
     </head>
     <body class="nk-body bg-lighter " >
         <div class="nk-app-root">
-            <div class="nk-wrap " style="background-image: url('images/dgbf/bat 2.png'); background-position: button; background-size: cover; ">
+            <div class="nk-wrap " style="background-image: url('images/dgbf/bat 4.png'); background-position: button; background-size: cover; ">
                 <div class="nk"  >
                     <img style=" background-size: cover;" src="images/dgbf/banniere-min.jpg"></img>
                 </div>
@@ -336,12 +336,12 @@ if ($_SESSION['poste']=='Directeur' || $_SESSION['poste']=='Sous-Directeur' || $
                                         <div class="nk-block-head-content ">
                                             <h3 class="nk-block-title page-title" style="text-align: center; color: white;">
                                                 CALENDRIER <?php 
-                                                            if ($_SESSION['poste']=='Directeur') {
-                                                                echo " DE LA DIRECTION";
-                                                            }if ($_SESSION['poste']=='Sous-Directeur') {
-                                                                echo " DE LA SOUS-DIRECTION";
-                                                            }if ($_SESSION['poste']=='Chef de Service') {
-                                                                echo " DU SERVICE";
+                                                            if ($_SESSION['poste']=='Sous-Directeur' || $_SESSION['poste']=='Directeur' || $_SESSION['poste']=='Chef de Service' || $_SESSION['poste']=='Agent') {
+                                                                echo " PERSONNEL";
+                                                            }if ($_SESSION['poste']=='Secretaire2' ) {
+                                                                echo " DU PERSONNEL SOUS-DIRECTEUR";
+                                                            }if ($_SESSION['poste']=='Secretaire' ) {
+                                                                echo " DU PERSONNEL DIRECTEUR";
                                                             } ?>
                                             </h3>
                                         </div>
@@ -573,7 +573,7 @@ if ($_SESSION['poste']=='Directeur' || $_SESSION['poste']=='Sous-Directeur' || $
                     {   id     : '<?php echo $elt_event['id_event']; ?>',
                         title  : '<?php echo $elt_event['libelle_type_even']; ?>',
                         start  : '<?php echo $elt_event['start_event']." ".$elt_event['heure_event']; ?>',
-                        description : '<?php echo "De ".$elt_event['fin_event']." à ".$elt_event['fin_event'].". Orgainser par ".$elt_event['np_agent']; ?>',
+                        description : '<?php echo "De ".$elt_event['heure_event']." à ".$elt_event['fin_event'].". Orgainser par ".$elt_event['np_agent']; ?>',
                         color  : '<?php echo $elt_event['color_event']; ?>' },
                 <?php }else{?>
                     {   id     : '<?php echo $elt_event['id_event']; ?>',

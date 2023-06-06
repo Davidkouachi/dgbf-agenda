@@ -51,7 +51,7 @@ if ($_POST['type_event']!='Rendez-Vous') {
     </head>
     <body class="nk-body bg-lighter " >
         <div class="nk-app-root">
-            <div class="nk-wrap " style="background-image: url('images/dgbf/bat 2.png'); background-position: button; background-size: cover; ">
+            <div class="nk-wrap " style="background-image: url('images/dgbf/bat 4.png'); background-position: button; background-size: cover; ">
                 <div class="nk"  >
                     <img style=" background-size: cover;" src="images/dgbf/banniere-min.jpg"></img>
                 </div>
@@ -126,8 +126,8 @@ if ($_POST['type_event']!='Rendez-Vous') {
                                                             <h4 class="timeline-title text-primary ">
                                                                 Date et Heure:
                                                             </h4>
-                                                            <h4 class="timeline-title text-primary ">
-                                                                <?php echo $elt['date_rdv'].' à '.$elt['heure_rdv'] ?>
+                                                            <h4 class="timeline-title text-dark ">
+                                                                <?php $start= new DateTime($elt['date_rdv']); echo $start->format('d-m-Y').' à '.$elt['heure_rdv'] ?>
                                                             </h4>
                                                         </div>
                                                     </li>
@@ -138,13 +138,13 @@ if ($_POST['type_event']!='Rendez-Vous') {
                                                             <h4 class="timeline-title text-primary ">
                                                                 Demander par :
                                                             </h4>
-                                                            <h4 class="timeline-title text-primary ">
+                                                            <h4 class="timeline-title text-dark ">
                                                                 <?php echo 'Nom : '.$elt['np_usager'] ?>
                                                             </h4>
-                                                            <h2 class="timeline-title text-primary ">
+                                                            <h2 class="timeline-title text-dark ">
                                                                 <?php echo 'Email : '.$elt['email_usager'] ?>
                                                             </h2>
-                                                            <h2 class="timeline-title text-primary ">
+                                                            <h2 class="timeline-title text-dark ">
                                                                 <?php echo 'Contact : '.$elt['tel_usager'] ?>
                                                             </h2>
                                                         </div>
@@ -156,7 +156,7 @@ if ($_POST['type_event']!='Rendez-Vous') {
                                                             <h6 class="timeline-title text-primary ">
                                                                 Motif :
                                                             </h6>
-                                                            <h6 class="timeline-title text-primary ">
+                                                            <h6 class="timeline-title text-dark ">
                                                                 <?php if ($elt['motif_rdv']=='') {
                                                                     $req1=$bdd->prepare("SELECT * FROM prestation where id_pres=? ");
                                                                     $req1->execute(array($elt['id_pres']));
@@ -171,12 +171,48 @@ if ($_POST['type_event']!='Rendez-Vous') {
                                                             </h6>
                                                         </div>
                                                     </li>
+                                                    <li class="timeline-item">
+                                                        <div class="timeline-status bg-primary">
+                                                        </div>
+                                                        <div class="timeline-data">
+                                                            <h4 class="timeline-title text-primary ">
+                                                                Statut:
+                                                            </h4>
+                                                            <h4 class="timeline-title text-<?php if ($elt['statut_rdv']=="en attente") {
+                                                                echo "warning";
+                                                            }elseif ($elt['statut_rdv']=="terminer") {
+                                                                echo "success";
+                                                            }elseif ($elt['statut_rdv']=="annuler" || $elt['statut_rdv']=="absent") {
+                                                                echo "danger";
+                                                            } ?> ">
+                                                                <?php echo $elt['statut_rdv'] ?>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
                                                 <?php }} ?>
 
-                                                <?php if ($_POST['type_event']!='Rendez-Vous'){ foreach ($element as $elt) {?>
+                                                <?php if ($_POST['type_event']!='Rendez-Vous'){ foreach ($element as $elt) { $start= new DateTime($elt['start_event']); $end= new DateTime($elt['end_event']); ?>
                                                     <h6 class="nk-block-title page-title text-center text-dark">
                                                         <?php echo $elt['libelle_type_even']; ?>
                                                     </h6>
+                                                    <li class="timeline-item">
+                                                        <div class="timeline-status bg-primary">
+                                                        </div>
+                                                        <div class="timeline-data">
+                                                            <h4 class="timeline-title text-primary ">
+                                                                Importance:
+                                                            </h4>
+                                                            <h4 class="timeline-title text-<?php if ($elt['color_event']=="orange") {
+                                                                echo "warning";
+                                                            }elseif ($elt['color_event']=="green") {
+                                                                echo "success";
+                                                            }elseif ($elt['color_event']=="red") {
+                                                                echo "danger";
+                                                            } ?> ">
+                                                                <?php echo $elt['statut_event'] ?>
+                                                            </h4>
+                                                        </div>
+                                                    </li>
                                                     <li class="timeline-item">
                                                         <div class="timeline-status bg-primary">
                                                         </div>
@@ -186,8 +222,8 @@ if ($_POST['type_event']!='Rendez-Vous') {
                                                             </h4>
                                                             <h4 class="timeline-title ">
                                                                 <?php if ($elt['start_event']==$elt['end_event']) {
-                                                                    echo $elt['start_event'].' de '.$elt['heure_event'].' à '.$elt['heure_event'];
-                                                                }else{ echo 'Du '.$elt['start_event'].' au '.$elt['end_event'].' de '.$elt['heure_event'].' à '.$elt['fin_event']; }  ?>
+                                                                    echo $start->format('d-m-Y').' de '.$elt['heure_event'].' à '.$elt['fin_event'];
+                                                                }else{ echo 'Du '.$start->format('d-m-Y').' au '.$end->format('d-m-Y').' de '.$elt['heure_event'].' à '.$elt['fin_event']; }  ?>
                                                             </h4>
                                                         </div>
                                                     </li>

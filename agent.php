@@ -116,7 +116,7 @@ if ($_SESSION['id_agent']=='') {
     </head>
     <body class="nk-body bg-lighter ">
         <div class="nk-app-root">
-            <div class="nk-wrap " style="background-image: url('images/dgbf/bat 2.png'); background-position: button; background-size: cover; ">
+            <div class="nk-wrap " style="background-image: url('images/dgbf/bat 4.png'); background-position: button; background-size: cover; ">
                 <div class="nk"  >
                     <img style=" background-size: cover;" src="images/dgbf/banniere-min.jpg"></img>
                 </div>
@@ -237,9 +237,9 @@ if ($_SESSION['id_agent']=='') {
                                                                             Administrateur
                                                                         </label>
                                                                         <div class="form-control-wrap ">
-                                                                            <select class="form-select js-select2" id="fv-topics" name="admin_agent" required="">
-                                                                                <option value="non"> Non </option>
-                                                                                <option value="oui"> Oui </option>
+                                                                            <select class="form-select js-select2" name="admin_agent" required=" ">
+                                                                                <option value="non">NON</option>
+                                                                                <option value="oui">OUI</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -270,13 +270,9 @@ if ($_SESSION['id_agent']=='') {
                                                                             Chef de Service
                                                                         </label>
                                                                         <div class="form-control-wrap ">
-                                                                            <select class="form-select js-select2" name="chef_service" required="">
-                                                                                <option value="non" selected>
-                                                                                    NON
-                                                                                </option>
-                                                                                <option value="oui">
-                                                                                    OUI
-                                                                                </option>
+                                                                            <select class="form-select js-select2" name="chef_service" required=" ">
+                                                                                <option value="non">NON</option>
+                                                                                <option value="oui">OUI</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>

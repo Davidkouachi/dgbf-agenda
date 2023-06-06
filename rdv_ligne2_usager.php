@@ -98,7 +98,7 @@ echo $time."   ".date("H:i:s", strtotime('+10 minutes',strtotime($time)));*/
     </head>
     <body class="nk-body bg-lighter ">
         <div class="nk-app-root">
-            <div class="nk-wrap " style="background-image: url('images/dgbf/bat 2.png'); background-position: button; background-size: cover; ">
+            <div class="nk-wrap " style="background-image: url('images/dgbf/bat 4.png'); background-position: button; background-size: cover; ">
                 <div class="nk"  >
                     <img style=" background-size: cover;" src="images/dgbf/banniere-min.jpg"></img>
                 </div>
@@ -249,7 +249,7 @@ echo $time."   ".date("H:i:s", strtotime('+10 minutes',strtotime($time)));*/
                                                             </div>
 
                                                             <div class="tab-pane <?php echo $etat1; ?>" id="thisyear">
-                                                                <form class="row g-gs invest-ov gy-2" action="save/rdv.php" method="POST" >
+                                                                <form class="row g-gs invest-ov gy-2" action="save/rdv_usager.php" method="POST" >
                                                                     <div class="row g-gs">
                                                                         <?php foreach ($element_usager as $elt_usager) {?>
                                                                         <div class="col-md-3">
@@ -342,7 +342,7 @@ echo $time."   ".date("H:i:s", strtotime('+10 minutes',strtotime($time)));*/
                                                                         </div>
                                                                         <div class="col-md-12" style="text-align: center; justify-content:center;">
                                                                             <div class="form-group ">
-                                                                                <button style="text-align: center; justify-content:center;" class="col-md-4 btn btn-dim btn-lg btn-success" type="submit" name="btn_rdv_ligne_usager">
+                                                                                <button style="text-align: center; justify-content:center;" class="col-md-2 btn btn-dim btn-lg btn-success" name="btn_rdv_ligne_usager">
                                                                                     Valider
                                                                                     <em style="margin-left: 5px;" class="icon ni ni-check-circle"></em>
                                                                                 </button>

@@ -3,6 +3,10 @@
 session_start();
 require_once("connexion_bd/connexion_bd.php");
 
+if (isset($_SESSION['id_usager'])>'0'){
+        header('location:rdv_ligne_usager.php');
+    }
+
 $req_pres=$bdd->prepare("SELECT * FROM prestation,structure_administrative where prestation.id_hira=structure_administrative.id_hira");
 $req_pres->execute(array());
 $element_pres=$req_pres->fetchall();
@@ -38,7 +42,7 @@ echo $time."   ".date("H:i:s", strtotime('+10 minutes',strtotime($time)));*/
     </head>
     <body class="nk-body bg-lighter ">
         <div class="nk-app-root">
-            <div class="nk-wrap " style="background-image: url('images/dgbf/bat 2.png'); background-position: button; background-size: cover; ">
+            <div class="nk-wrap " style="background-image: url('images/dgbf/bat 4.png'); background-position: button; background-size: cover; ">
                 <div class="nk"  >
                     <img style=" background-size: cover;" src="images/dgbf/banniere-min.jpg"></img>
                 </div>

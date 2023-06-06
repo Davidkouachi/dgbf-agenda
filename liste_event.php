@@ -103,7 +103,7 @@ if ($_SESSION['poste']=='Agent') {
     </head>
     <body class="nk-body bg-lighter " >
         <div class="nk-app-root">
-            <div class="nk-wrap " style="background-image: url('images/dgbf/bat 2.png'); background-position: button; background-size: cover; ">
+            <div class="nk-wrap " style="background-image: url('images/dgbf/bat 4.png'); background-position: button; background-size: cover; ">
                 <div class="nk"  >
                     <img style=" background-size: cover;" src="images/dgbf/banniere-min.jpg"></img>
                 </div>
@@ -404,7 +404,7 @@ if ($_SESSION['poste']=='Agent') {
                                                         </tr>
                                                     </thead>
                                                     <tbody class="text-center">
-                                                        <?php foreach ($element_rdv1 as $key => $value) {?>
+                                                        <?php foreach ($element_rdv1 as $key => $value) { $start= new DateTime($value['start_event']); $end= new DateTime($value['end_event']);?>
                                                         <tr class="nk-tb-item">
                                                             <td class="nk-tb-col nk-tb-col-check">
                                                                 <?php echo $key+1; ?>
@@ -422,9 +422,9 @@ if ($_SESSION['poste']=='Agent') {
                                                             <td class="nk-tb-col tb-col-md">
                                                                 <span>
                                                                     <?php if ($value['start_event']==$value['end_event']) {
-                                                                        echo $value['start_event'];
+                                                                        echo $start->format('d-m-Y');
                                                                     }else{
-                                                                       echo $value['start_event']." au ".$value['end_event']; 
+                                                                       echo $start->format('d-m-Y')." au ".$end->format('d-m-Y'); 
                                                                     }  ?>
                                                                 </span>
                                                             </td>

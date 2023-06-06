@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 session_start();
 require_once("connexion_bd/connexion_bd.php");
@@ -166,7 +166,7 @@ if (isset($_POST['btn_suivant1'])) {
 </head>
 <body class="nk-body bg-lighter ">
     <div class="nk-app-root">
-        <div class="nk-wrap " style="background-image: url('images/dgbf/bat 2.png'); background-position: button; background-size: cover; ">
+        <div class="nk-wrap " style="background-image: url('images/dgbf/bat 4.png'); background-position: button; background-size: cover; ">
             <div class="nk"  >
                 <img style=" background-size: cover;" src="images/dgbf/banniere-min.jpg"></img>
             </div>

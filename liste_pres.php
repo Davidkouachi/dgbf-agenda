@@ -88,7 +88,7 @@ if ($_SESSION['poste']=='Agent') {
     </head>
     <body class="nk-body bg-lighter " >
         <div class="nk-app-root">
-            <div class="nk-wrap " style="background-image: url('images/dgbf/bat 2.png'); background-position: button; background-size: cover; ">
+            <div class="nk-wrap " style="background-image: url('images/dgbf/bat 4.png'); background-position: button; background-size: cover; ">
                 <div class="nk"  >
                     <img style=" background-size: cover;" src="images/dgbf/banniere-min.jpg"></img>
                 </div>
@@ -330,7 +330,7 @@ if ($_SESSION['poste']=='Agent') {
                                             </marquee> 
                                         </div>
                                         <div class="nk-block-head-content">
-                                            <a class="btn btn-icon btn-primary btn-dim" href="rdv.php">
+                                            <a class="btn btn-icon btn-primary btn-dim" href="prestation.php">
                                                 <em class="icon ni ni-plus"></em>Nouvelle Prestation 
                                             </a>
                                         </div>

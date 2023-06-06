@@ -75,12 +75,12 @@
             $element_event3=$req_event3->fetchall();
             $nbre_event3=$req_event3->rowcount();
 
-            $req_event4=$bdd->prepare("SELECT * FROM event where statut_event>='terminer' and event.id_hira=? ");
+            $req_event4=$bdd->prepare("SELECT * FROM event where statut_event='terminer' and event.id_hira=? ");
             $req_event4->execute(array($_SESSION['id_hira']));
             $element_event4=$req_event4->fetchall();
             $nbre_event4=$req_event4->rowcount();
 
-            $req_event5=$bdd->prepare("SELECT * FROM event where statut_event>='annuler' and event.id_hira=? ");
+            $req_event5=$bdd->prepare("SELECT * FROM event where statut_event='annuler' and event.id_hira=? ");
             $req_event5->execute(array($_SESSION['id_hira']));
             $element_event5=$req_event5->fetchall();
             $nbre_event5=$req_event5->rowcount();
@@ -110,12 +110,12 @@
             $element_event3=$req_event3->fetchall();
             $nbre_event3=$req_event3->rowcount();
 
-            $req_event4=$bdd->prepare("SELECT * FROM event where statut_event>='terminer' and event.id_hira=? ");
+            $req_event4=$bdd->prepare("SELECT * FROM event where statut_event='terminer' and event.id_hira=? ");
             $req_event4->execute(array($_SESSION['id_hira']));
             $element_event4=$req_event4->fetchall();
             $nbre_event4=$req_event4->rowcount();
 
-            $req_event5=$bdd->prepare("SELECT * FROM event where statut_event>='annuler' and event.id_hira=? ");
+            $req_event5=$bdd->prepare("SELECT * FROM event where statut_event='annuler' and event.id_hira=? ");
             $req_event5->execute(array($_SESSION['id_hira']));
             $element_event5=$req_event5->fetchall();
             $nbre_event5=$req_event5->rowcount();
@@ -165,7 +165,7 @@
         </head>
         <body class="nk-body bg-lighter ">
             <div class="nk-app-root">
-                <div class="nk-wrap " style="background-image: url('images/dgbf/bat 2.png'); background-position: button; background-size: cover; ">
+                <div class="nk-wrap " style="background-image: url('images/dgbf/bat 4.png'); background-position: button; background-size: cover; ">
                     <div class="nk"  >
                         <img style=" background-size: cover;" src="images/dgbf/banniere-min.jpg"></img>
                     </div>
